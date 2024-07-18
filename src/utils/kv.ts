@@ -19,7 +19,7 @@ export async function getUser(){
   }
 }
 
-async function setUser() {
+export async function setUser() {
     try {
       await kv.set('setExample', '123abc', { ex: 100, nx: true });
     } catch (error) {

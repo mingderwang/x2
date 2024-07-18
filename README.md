@@ -9,6 +9,7 @@ bun i
 To run:
 
 ```bash
+vercel env pull .env.local
 bun run dev
 ```
 

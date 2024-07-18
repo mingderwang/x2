@@ -1,8 +1,9 @@
 {
   "name": "x2",
-  "type": "module",
   "version": "0.0.1",
+  "license": "MIT",
   "module": "index.ts",
+  "type": "module",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

@@ -1,14 +1,20 @@
 ---
+import Form from "../components/arrayJSON.astro";
+import ConfettiButton from "../components/ConfettiButton.astro";
+import { SignUpFormData } from "../utils/constants"
+const data = SignUpFormData; 
 ---
 
 <html lang="en">
-	<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} >
-        <title>ming</title>
-	</head>
-	<body>
-		<h1>https://x-pi-liart.vercel.app/api/neon</h1>
-	</body>
+    <meta name="generator" content={Astro.generator} />
+    <title>ming</title>
+  </head>
+  <body>
+    <ConfettiButton />
+    <Form data={data} />
+    <h1>https://x-pi-liart.vercel.app/api/neon</h1>
+  </body>
 </html>

@@ -1,0 +1,50 @@
+---
+import type { Data, FormField } from "../types/index";
+// Write your component code in this file!
+type Props = {
+  data: Data;
+};
+
+const { data } = Astro.props;
+---
+
+<div>Hello {data}!</div>
+<h1>Create an account</h1>
+<form id={data.id} method={data.method} action={data.action}>
+  <ul>
+    {
+      data.fields.map((field: FormField) => (
+        <li>
+          <label for={field.name}>{field.name}</label>
+          <>
+            <input name={field.name} id={field.id} type={field.tye} />
+            <br />
+          </>
+        </li>
+      ))
+    }
+  </ul>
+  <button>{data.submit}</button>
+  <p id="form-error"></p>
+</form>
+<a href="/login">Sign in</a>
+
+<h1>Register</h1>
+<form>
+  <label>
+    Username:
+    <input type="text" name="username" />
+  </label>
+  <br />
+  <label>
+    Email:
+    <input type="email" name="email" />
+  </label>
+  <br />
+  <label>
+    Password:
+    <input type="password" name="password" />
+  </label>
+  <br />
+  <button>Submit</button>
+</form>

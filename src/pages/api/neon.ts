@@ -1,4 +1,4 @@
-import { db } from "../../utils/db";
+import { db } from "../../utils/db3";
 import { sql } from "drizzle-orm";
 
 export const GET = async ({}) => {

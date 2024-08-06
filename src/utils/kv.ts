@@ -20,12 +20,22 @@ export async function getUser() {
   }
 }
 
-export async function setUser() {
+export async function setUser(key, username, password_hash) {
   try {
     const res2 = await kv.hget("bike:2", "model");
     console.log(res2); // 'Deimos'
 
- //   await kv.set("setExample", "123abc", { ex: 100, nx: true });
+    const res1 = await kv.hset(
+      'bike:1',
+      {
+        'model': 'Deimos',
+        'brand': 'Ergonom',
+        'type': 'Enduro bikes',
+        'price': 4972,
+      }
+    )
+
+    await kv.set("setExample", "123abc", { ex: 100, nx: true });
   } catch (error) {
     console.error(error);
   }
